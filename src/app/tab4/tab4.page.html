@@ -11,9 +11,15 @@
     <ion-card-header>
       <ion-card-title>Adivina un número entre el 1 y el 100</ion-card-title>
     </ion-card-header>
-  
     <ion-card-content>
-      Introduce un número entre el 1 y el 100 
+      <ion-card-subtitle>
+        Introduce un numero entre el 1 y el 100: 
+      </ion-card-subtitle>
+      <ion-input type="number" [(ngModel)]= "numEscrito" placeholder="000"></ion-input>
+      <ion-button (click)="comprobarNumero()">Comprobar</ion-button>
+      <ion-card-content>{{mensaje}}</ion-card-content>
+      <ion-button *ngIf="mensaje=='Has acertado'" (click)="confirmarReinicio()">Reiniciar juego</ion-button>
+      
     </ion-card-content>
   </ion-card>
 
